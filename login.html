@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women Safety Alert System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="top-bar">
+      <span>Welcome, {{ username }}!</span>
+      <a href="{{ url_for('logout') }}"><button class="logout-btn">Logout</button></a>
+    </div>
+    
+    <h1>🚨 WOMEN SAFETY ALERT SYSTEM 🚨</h1>
+    <p>Press SOS, say <b>HELP</b>, or shake the phone</p>
+
+    <button id="sosBtn">SEND SOS</button>
+    <button id="stopBtn">STOP SOS</button>
+    <button id="fakeCallBtn">FAKE CALL</button>
+
+    <div id="alertBox"></div>
+
+    <h3>Emergency Contacts</h3>
+    <ul id="contactList">
+      <li><button class="callBtn" data-number="+919059413218">Call Guardian</button></li>
+      <li><button class="callBtn" data-number="+916300278586">Call Close Friend 1</button></li>
+      <li><button class="callBtn" data-number="+918919924854">Call Close Friend 2</button></li>
+    </ul>
+  </div>
+
+  <!-- Fake Call Modal UI -->
+  <div id="fakeCallModal" class="hidden">
+    <div class="incoming-call">
+      <h2 id="callerName">Dad</h2>
+      <p>Incoming call...</p>
+      <div class="call-actions">
+        <button id="acceptCallBtn" class="accept-btn">Accept</button>
+        <button id="declineCallBtn" class="decline-btn">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
